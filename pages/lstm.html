@@ -20,7 +20,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Lyric Generation for Hit Songs</h1>
-						<p>Ipsum dolor sit amet nullam</p>
+						<p>Long Short-Term Memory Recurrent Neural Networks (LSTM RNN) generate lyrics mimicking hit songs from different decades: 1970's, 1990's, 2000's</p>
 					</header>
 
 				<!-- Main -->
@@ -28,12 +28,83 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<h2>Magna feugiat lorem</h2>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-								<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-								<h2>Tempus veroeros</h2>
-								<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+
+								<h2>Background</h2>
+								<div class="center" style="width: 70%">
+									<h3>What has America been singing about? Trends in themes in the U.S. top-40 songs: 1960–2010</h3>
+
+									<p><i>Peter G. Christenson, Silvia de Haan-Rietdijk, Donald F. Roberts, and Tom F.M. ter Bogt. Psychology of Music. 1/23/2018</i></p>
+
+									<h3>Absract</h3>
+									<p>This study explored 19 themes embedded in the lyrics of 1,040 U.S. top-40 songs from 1960 through 2010, using R strucchange software to identify trends and breaks in trends. Findings reveal both continuity and change. As in 1960, the predominant topic of pop music remains romantic and sexual relationships. However, whereas the proportion of lyrics referring to relationships in romantic terms remained stable, the proportion including reference to sex-related aspects of relationships increased sharply. References to lifestyle issues such as dancing, alcohol and drugs, and status/wealth increased substantially, particularly in the 2000s. Other themes were far less frequent: Social/political issues, religion/God, race/ethnicity, personal identity, family, friends showed a modest occurrence in top-40 music throughout the studied period and showed no dramatic changes. Violence and death occurred in a small number of songs, and both increased, particularly since the 1990s. References to hate/hostility, suicide, and occult matters were very rare. Results are examined in the context of cultural changes in the social position of adolescents, and more specifically in light of the increased popularity of rap/hip-hop music, which may explain the increases in references to sex, partying, dancing, drug use, and wealth.
+									</p>
+								</div>
+
+								<h2>1970-1979</h2>
+								<div class="center caption">
+									<p>----- diversity: 0.5<br/>
+										----- Generating with seed: "close to mine and i knew our joy would f"<br/><br/>
+										close to mine and i knew our joy would feeded my love still begin my love i got a show for the boat you are and i can take you i love you are my new rill in the mornin only when you know i love you baby i want to knows in love you say when you know its all right before the means wont you really my eyes dont stop it do it made away i have seen only the band aleaist we say shes gonna be long do you about the real real the morning baby don
+									</p>
+								</div>
+								<p>explantation</p>
+
+
+								<h2>1990-1999</h2>
+								<div class="center caption">
+										<!-- <p>----- diversity: 0.2<br/>
+										----- Generating with seed: "a fox jumps over the lazy dog and then i"<br/><br/>
+										a fox jumps over the lazy dog and then i can want to be with you i got the way i want to be the ground i want to be the way i want to be the way i want to be the way i got the way i can say the way it and i want to give you the things the way i want to be the way i got a long in my love is the way you got the way i say i want to be the heart the way i want to know the sun i want to be the way you love you i want to get the way i dont wa</p>
+										<p>
+										----- diversity: 0.5<br/>
+										----- Generating with seed: "a fox jumps over the lazy dog and then i"<br/><br/>
+										a fox jumps over the lazy dog and then is a promise in the things youre waiting i wanna say of a win and if i know that were come on now when you want to cant know that i do so i had mitte the heart come on made that passes of the way when you do the man now youre all the hath the light i was a dance all i do i can you got thats a long the way you gonna be the way when you want to feel the day the way where is a day as the real to the m</p>
+										<p>
+										----- diversity: 1.0<br/>
+										----- Generating with seed: "a fox jumps over the lazy dog and then i"<br/><br/>
+										a fox jumps over the lazy dog and then ill see a risur for the trut lets be of money trying i said young turning cant go snig we dont appping in my heart heregoin it he will see your woodes droam of it you lets base  of ill feel thats because and a long and nav sway goodbabe for you wont cant get a eyes manohimayour how must so tell your loves in the humpty is gone kicks dont know when i said free now stoming but without the world back</p> -->
+										<p>
+										----- diversity: 0.2<br/>
+										----- Generating with seed: "break me yeah you wreck mei put you high"<br/><br/>
+										break me yeah you wreck mei put you high i said i want it i know i love you this is the way i see it who wont you can be a little shit what i want it i see it i can see it when i was are the same i want the bast when you should see it when you can see it i want it i can show you the stars im a good and i love it on the stars i got the club the bed the same i want the match the party thinkin when i should want the star i shake it off i s</p>
+
+									</div>
+
+									<h2>2006-2015</h2>
+									<div class="center caption">
+											<p>----- diversity: 0.2<br/>
+											----- Generating with seed: "a fox jumps over the lazy dog and then i"<br/><br/>
+											a fox jumps over the lazy dog and then i stand it out i love it and i love it out the bad be the chains a girl i want your mind i wanna show you this is the place i want your love i can see it i wanna see your mind i see the way i got the lights im stronding its a good come on i can take your heart the same when you can have the same i know i should want you i dont know i want the stars i would be we got the club the way i love it on th</p>
+											<p>----- diversity: 0.5<br/>
+												----- Generating with seed: "a fox jumps over the lazy dog and then i"<br/><br/>
+												a fox jumps over the lazy dog and then i shake it with a party to the close the girl im gonna see the club it aint gonna see it bank and i knew you look only though its all back its tracty i dont wanna say the club she just wanna see you like it and the club the same i see it i can love you go head be gone with the time i wan back and i be in rolling on a bring i want me have real do in the chase what i knee of someone the prines she be
+
+										</p>
+									</div>
+									<p>explantation</p>
+
+									<h2>Diversity Parameter Too High</h2>
+
+										<div class="center caption">
+											<p>
+												----- diversity: 1.2<br/>
+												----- Generating with seed: "close to mine and i knew our joy would f"<br/><br/>
+												close to mine and i knew our joy would froovingc vagneseen  again loo people donten anoture at worry babya ramill heres funky aw in a skyapaveget easy oh shes got me jamie sailing crorllingte angel drull with my lordhin itstars walk to your longeestyeeered you have rockin morethe werelywild my yreages now peeck cap back soon on no if insideishoar boogie you true sexyahply sudmen for his lonile stime yeah uhoh  hear what is of feelings c
+											</p>
+										</div>
+
+
+									<h2>Overfitting</h2>
+									<p>This generation used an LSTM trained for 17 epochs instead of the usual 3</p>
+
+									<div class="center caption">
+										<p>
+											----- diversity: 0.5<br/>
+											----- Generating with seed: "ues down to see we dont even care as res"<br/><br/>
+											ues down to see we dont even care as resoi wousone mo yera ll tan hosa m ele i wawdhe or aie tlog leerwyutar or llonormooo ooetlu maol iomas wngwy id aos nio n aneag ntanesa soat a a wd at tonoeor  ne mnr inthl e ttolow em yyinnes h atthdei rinuiaihwg oehe tl   hot ane sh hse sinouonne woigoy w i twm elt shallhgwayt g ay wg gar d aoeio ise w  y asouine o e mae girdtwot whoeoneryarih two no wygoowgiinoonow aouuaan l ao ls e m eudrtaneaio
+										</p>
+									</div>
+
 							</section>
 
 					</div>
