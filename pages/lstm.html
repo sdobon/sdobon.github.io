@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Lyric Generation for Hit Songs</title>
+		<title>Lyric Generator for Hit Songs</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Lyric Generation for Hit Songs</h1>
+						<h1>Lyric Generator for Hit Songs</h1>
 						<p>Long Short-Term Memory Recurrent Neural Networks (LSTM RNN) generate lyrics mimicking hit songs from different decades: 1970's, 1990's, 2000's</p>
 					</header>
 
@@ -30,13 +30,18 @@
 							<section id="content" class="main">
 
 								<h2>Background</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This project aims to explore trends in popular music over time.  By generating text to mimic hit songs from different decades, we can look at the output to compare the dominant themes of the times, and hopefully learn something about what life was like at those times, at least in terms of popular culture mindset.  In some sense, the output is a summary or compilation of all of the input data.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We made use of Long-Short Term Memory Neural Networks, a popular type of Recurrent Neural Network used to predict/generate sequences of things. In this particular project, a seed sequence of 40 characters was used to predict the 41st character.  Then, we slide the window and use characters 2-41 to predict the 42nd, and repeat 400 times until we have a paragraph of generated text.  For training data, we created a corpus of text for each decade containing the lyrics of the top 100 songs for every year of that decade.
+								</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Part of what makes this project cool is that it is almost impossible to empirically measure success.  There is no way to say "the grammar is X% perfect," or, "the topics are Y% accurate to the decade," so it becomes more of an art and a creative process to find out how to determine success and optimize the model.  As part of validation, we found the following study which did a rigorous statistical analysis of hit songs, and I have to say our generated texts and the insights we extracted are spot on with the study's findings (and probably took a fraction of the time).
+								</p>
 								<div class="center" style="width: 70%">
 									<h3>What has America been singing about? Trends in themes in the U.S. top-40 songs: 1960–2010</h3>
 
 									<p><i>Peter G. Christenson, Silvia de Haan-Rietdijk, Donald F. Roberts, and Tom F.M. ter Bogt. Psychology of Music. 1/23/2018</i></p>
 
 									<h3>Abstract</h3>
-									<p>This study explored 19 themes embedded in the lyrics of 1,040 U.S. top-40 songs from 1960 through 2010, using R strucchange software to identify trends and breaks in trends. Findings reveal both continuity and change. As in 1960, the predominant topic of pop music remains romantic and sexual relationships. However, whereas the proportion of lyrics referring to relationships in romantic terms remained stable, the proportion including reference to sex-related aspects of relationships increased sharply. References to lifestyle issues such as dancing, alcohol and drugs, and status/wealth increased substantially, particularly in the 2000s. Other themes were far less frequent: Social/political issues, religion/God, race/ethnicity, personal identity, family, friends showed a modest occurrence in top-40 music throughout the studied period and showed no dramatic changes. Violence and death occurred in a small number of songs, and both increased, particularly since the 1990s. References to hate/hostility, suicide, and occult matters were very rare. Results are examined in the context of cultural changes in the social position of adolescents, and more specifically in light of the increased popularity of rap/hip-hop music, which may explain the increases in references to sex, partying, dancing, drug use, and wealth.
+									<p>This study explored 19 themes embedded in the lyrics of 1,040 U.S. top-40 songs from 1960 through 2010, using R strucchange software to identify trends and breaks in trends. Findings reveal both continuity and change. <b>As in 1960, the predominant topic of pop music remains romantic and sexual relationships. However, whereas the proportion of lyrics referring to relationships in romantic terms remained stable, the proportion including reference to sex-related aspects of relationships increased sharply. References to lifestyle issues such as dancing, alcohol and drugs, and status/wealth increased substantially, particularly in the 2000s. Other themes were far less frequent:</b> Social/political issues, religion/God, race/ethnicity, personal identity, family, friends showed a modest occurrence in top-40 music throughout the studied period and showed no dramatic changes. Violence and death occurred in a small number of songs, and both increased, particularly since the 1990s. References to hate/hostility, suicide, and occult matters were very rare. Results are examined in the context of cultural changes in the social position of adolescents, and more specifically in light of the increased popularity of rap/hip-hop music, which may explain the increases in references to sex, partying, dancing, drug use, and wealth.
 									</p>
 								</div>
 
@@ -47,7 +52,7 @@
 										close to mine and i knew our joy would feeded my love still begin my love i got a show for the boat you are and i can take you i love you are my new rill in the mornin only when you know i love you baby i want to knows in love you say when you know its all right before the means wont you really my eyes dont stop it do it made away i have seen only the band aleaist we say shes gonna be long do you about the real real the morning baby don
 									</p>
 								</div>
-								<p>explantation</p>
+								<p>Romantic relationships the primary topic, language not very sexual in nature.</p>
 
 
 								<h2>1990-1999</h2>
@@ -69,6 +74,7 @@
 										break me yeah you wreck mei put you high i said i want it i know i love you this is the way i see it who wont you can be a little shit what i want it i see it i can see it when i was are the same i want the bast when you should see it when you can see it i want it i can show you the stars im a good and i love it on the stars i got the club the bed the same i want the match the party thinkin when i should want the star i shake it off i s</p>
 
 									</div>
+									<p>Still romantic content: juxtaposed use of "I" and "you."  Starting to get more sexual and party-themed: use of words like "bed," "club," "party."</p>
 
 									<h2>2006-2015</h2>
 									<div class="center caption">
@@ -81,7 +87,7 @@
 
 										</p>
 									</div>
-									<p>explantation</p>
+									<p>Lots of focus on "club" and "party."  This decade I show two sections of generated text with different "diversity," which is basically a randomness factor.  Diveresity too low (first example, 0.2) results in less interesting, repetitive output. Too high results in gibberish, as you'll see next.</p>
 
 									<h2>Diversity Parameter Too High</h2>
 
@@ -95,7 +101,7 @@
 
 
 									<h2>Overfitting</h2>
-									<p>This generation used an LSTM trained for 17 epochs instead of the usual 3</p>
+									<p>This generator used an LSTM trained for 17 epochs instead of the usual 3.  Overfitting to the training data results in the inabilty to form english words, no matter the diversity parameter.  Generally with sequence generators, we'd like to shoot for more than 3 epochs, but that would require more consistent training data- such as all from the same genre or same artist- to not result in overfitting.</p>
 
 									<div class="center caption">
 										<p>

@@ -3776,3 +3776,9 @@ input, select, textarea {
 		.caption {
 			width: 50%
 		}
+
+		.headshot {
+			padding: 0.65em;
+			border-radius: 100%;
+			border: solid 1px;
+		}
