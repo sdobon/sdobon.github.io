@@ -29,45 +29,51 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
-								<h2>Magna feugiat lorem</h2>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/_o-U50IGvSo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-								<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-								<h2>Tempus veroeros</h2>
-								<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+								<h2>Knowledge Representation and Reasoning</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This project hailed from the Knowledge Representation and Reasoning side of Artificial Intelligence. Knowledge Representation and Reasoning is an area of Computer Science that aims to create intelligent machines through the use of facts, rules, and deductions (more facts).  To put it plainly, a reasoner system takes an input set of facts, and it has rules that use those facts to generate more facts about the world.  A simple example:</p>
+								<div class="center">
+									<p>Socrates is a man - (isa, Socrates, man)</p>
+									<p>All men are mortal - ( (mortal, ?X), (isa, ?X, man) )</p>
+									<p>Therefore, Socrates is mortal - (mortal, Socrates)</p>
+								</div>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;It then adds those new facts to the original set of facts, and again runs its rules to generate more facts about the world.  All <i>qualitative</i> knowledge about the world can be represented in these facts and rules.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Unlike Machine Learning, which is largely a black box as far as how its input was processed into the output, output of reasoner systems can be examined and traced back along the chain to determine how conclusions were reached.  Another large advantage is that it is far easier and quicker to add knowledge we know for sure into the reasoner, without lengthy fine tuning and testing.  Purists (and professors) would argue that this is the strategy by which true machine intelligence will one day be acheived.</p>
+								<h2>Minesweeper</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For our term project in this course, we set out to tackle Minesweeper, a game that is known to be hard because certain situations in the game have been proven NP-Complete to solve.  Since logical reasoners are exponential in the number of variables in a rule, we got around this with creative rule writing such that no rule had more than four variables.  That way, even though we are running exponential algorithms, they still complete in a reasonable amount of time.  In some especially tricky situations, the reasoner has to make a guess. So, as with any AI, it's not 100% perfect.</p>
+								<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/_o-U50IGvSo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 							</section>
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<!-- Footer -->
+						<footer id="footer">
+							<!-- <section>
+								<h2>Aliquam sed mauris</h2>
+								<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+								<ul class="actions">
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</section> -->
+							<section>
+								<h2>Sebastian Dobon</h2>
+								<dl class="alt">
+									<dt>Address</dt>
+									<dd>721 University Place &bull; Evanston, IL 60201 &bull; USA</dd>
+									<dt>Phone</dt>
+									<dd>(224) 659-0001</dd>
+									<dt>Email</dt>
+									<dd><a href="#">sebastiandobon2019@u.northwestern.edu</a></dd>
+								</dl>
+								<!-- <ul class="icons">
+									<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								</ul> -->
+							</section>
+							<p class="copyright">&copy; Sebastian Dobon. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</footer>
 
 			</div>
 

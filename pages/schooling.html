@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Multi Agent Modeling to Explore Fish Schooling</title>
+		<title>Agent-Based Modeling to Explore Fish Schooling</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -19,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Multi Agent Modeling to Explore Fish Schooling</h1>
+						<h1>Agent-Based Modeling to Explore Fish Schooling</h1>
 						<p>A study of cooperative behavior amongst schooling fish to avoid predators</p>
 					</header>
 
@@ -29,45 +29,73 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<!-- <span class="image main"><img src="images/pic04.jpg" alt="" /></span> -->
-								<h2>Magna feugiat lorem</h2>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis fames ac ante ipsum primis in faucibus.</p>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/V1KeZI9ypE4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-								<p>Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Consequat leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit enim turpis lorem ipsum dolor sit amet feugiat. Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet est velit quis lorem.</p>
-								<h2>Tempus veroeros</h2>
-								<p>Cep risus aliquam gravida cep ut lacus amet. Adipiscing faucibus nunc placerat. Tempus adipiscing turpis non blandit accumsan eget lacinia nunc integer interdum amet aliquam ut orci non col ut ut praesent. Semper amet interdum mi. Phasellus enim laoreet ac ac commodo faucibus faucibus. Curae ante vestibulum ante. Blandit. Ante accumsan nisi eu placerat gravida placerat adipiscing in risus fusce vitae ac mi accumsan nunc in accumsan tempor blandit aliquet aliquet lobortis. Ultricies blandit lobortis praesent turpis. Adipiscing accumsan adipiscing adipiscing ac lacinia cep. Orci blandit a iaculis adipiscing ac. Vivamus ornare laoreet odio vis praesent nunc lorem mi. Erat. Tempus sem faucibus ac id. Vis in blandit. Nascetur ultricies blandit ac. Arcu aliquam. Accumsan mi eget adipiscing nulla. Non vestibulum ac interdum condimentum semper commodo massa arcu.</p>
+								<h2>Agent-Based Models</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;An agent-based model is a model which intends to simulate the actions and interactions of many individual agents, in order to study the resulting behavior of the system as a whole.  Agents can be anything: animals, molecules, or people within an organization or society.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Classes of agents follow the same programmed set of rules, and the goal is to keep the rules as simple as possible, to be able to assure correctness of the model.  If the agents' rules are guaranteed correct, the resulting behavior of the system is indisputably a representation of reality.  Agent-based models have enabled the simlification and proving of complex theories in biology, social science, and economics, to name a few.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Personally, the course I took on agent-based modeling was an excellent excercise in thinking about phenomena from both a birds-eye view and the perspective of individuals, and being able to trace a link between the two.  I gained an intuition for observing emergent phenomena in the world around me, and uncovering how that phenomena emerged as a result of the actions of indivuals, something that has already began serving me in my personal and professional life.</p>
+								<h2>The Model</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For my term project in this course, I built a model that tests one hypothesis on why certain fish exhibit schooling behavior. The “Many Eyes Hypothesis”: Schooling fish work together to identify and avoid predators, enlarging their effective field of vision. Almost all fish have a field of vision like this:</p>
+								<span><img src="../images/pp/schooling/fish_vision.png" class="center pic" alt="" /></span>
+								<br><br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Swimming together as a school, in theory, allows fish to have their blindspot covered because it is unlikely that an entire group of fish all have their backs to a predator.  Wikipedia states that it is unproven whether or not this hypothesis is true.  My agent-based model sets out to test this hypothesis, isolating the predator-prey hunt from already proven variables such as sensory confusion and cognitive overload.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;To exhibit schooling behavior, the fish follow three basic rules:</p>
+								<div class="center caption">
+									Separate - Don't bump into neighbors
+									<span><img src="../images/pp/schooling/separation.gif" class="center pic" alt="" /></span>
+									<br>
+									Align - Face same direction as neighbors
+									<span><img src="../images/pp/schooling/alignment.gif" class="center pic" alt="" /></span>
+									<br>
+									Cohere - Stay close to neighbors
+									<span><img src="../images/pp/schooling/cohesion.gif" class="center pic" alt="" /></span>
+									<br><br>
+								</div>
+								<h2>Qualitative Results</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In the screenshot below, the red prey fish can "see" the predator (white), and the blue prey fish cannot.  "Seeing" is based on field of vision and distance, and the red fish actively avoid the predator.  Because of schooling behavior, the blue fish that cannot yet see the predator follow their schoolmates' lead and adjust course to avoid the predator.</p>
+								<span><img src="../images/pp/schooling/fleeing.png" class="center pic" alt="" /></span>
+								<br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Predators wander randomly until they find a prey, and will turn black if they catch a fish.  The below video shows the model running at full speed and then in slow motion.</p>
+								<iframe width="560" height="315"  class="center" src="https://www.youtube.com/embed/B2kQF7eWkIs?rel=0&amp;start=75" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<br>
+								<iframe width="560" height="315"  class="center" src="https://www.youtube.com/embed/V1KeZI9ypE4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<br>
+								<br>
+								<h2>Quantitative Results</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The next step was to quantify whether schooling actually helped the fish survive or not.  I set up an experiment to test different values of "align coefficient" and "cohere coefficient," with (0,0) being no schooling, the fish only flee predators individually and separate to avoid bumping into each other.  At each configuration, I ran the model 10 times for 1000 time steps each and averaged the surviving number of prey fish.  10 runs at each point was enough to show a clear trend, with schooling increasing survivorship by 50% as you'll see below.  More runs would have made smoother trend, but I did not have enough compute available.</p>
+								<span><img src="../images/pp/schooling/tableau.png" class="center caption" alt="" /></span>
 							</section>
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<!-- Footer -->
+						<footer id="footer">
+							<!-- <section>
+								<h2>Aliquam sed mauris</h2>
+								<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+								<ul class="actions">
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</section> -->
+							<section>
+								<h2>Sebastian Dobon</h2>
+								<dl class="alt">
+									<dt>Address</dt>
+									<dd>721 University Place &bull; Evanston, IL 60201 &bull; USA</dd>
+									<dt>Phone</dt>
+									<dd>(224) 659-0001</dd>
+									<dt>Email</dt>
+									<dd><a href="#">sebastiandobon2019@u.northwestern.edu</a></dd>
+								</dl>
+								<!-- <ul class="icons">
+									<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								</ul> -->
+							</section>
+							<p class="copyright">&copy; Sebastian Dobon. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</footer>
 
 			</div>
 

@@ -28,67 +28,106 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<h2>The Problem</h2>
-								<p>problem</p>
+								<h2>Localization</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In robotics, there is a concept called localization, which refers to the robot finding out where it is in the world.  This is necessary because due to randomness of the real world (friction, low battery, etc), the same command sent to a motor does not always have the same result. Thus, the robot must use additional sensor data to locate where it has ended up in the world.</p>
+								<h2>Traditional Approach</h2>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In my AI robotics lab, we used a maze on a uniformly sized grid.  For the robot to locate itself on a grid cell, the simple approach is for the robot to use one distance sensor (Infrared) on its side and map the sensor value to a real world distance using a 2D regression:</p>
+								<span><img src="../images/mlai/localization/exp_regression.png" class="center caption" alt="" /></span>
+								<br><br>
+								<span><img src="../images/mlai/localization/drawing_1.png" class="center pic" alt="" /></span>
+								<br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This works in theory, but in practice we realized that if the robot ended up turned at an angle, the robot thought it was farther than it actually was, and would soon crash into a wall as a result of this false information:</p>
+								<span><img src="../images/mlai/localization/drawing_angle.png" class="center pic" alt="" /></span>
+								<div class="center caption">
+									<p>Here, the robot thinks it is 4cm to the right of where it actually is, and will tend to crash into the left wall instead of turning right to stay in the center</p>
+								</div>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Additionally, if the robot was right up against a wall, there would be a steep dropoff because of the design of the sensor, which our exponential regression (or any equation-based regression) could not account for.  This is a less important problem to solve because we hope we never end up that close to a wall, but a problem nonetheless and it explains the shape of our final regression curve.</p>
 								<span><img src="../images/mlai/localization/2d_left.png" class="center pic" alt="" /></span>
 								<div class="center caption">
-									<p>caption asdf asdfasdf asdfsdf sdfdfsdf sfsfs fs sfs fs fsfs fsf sf s fsf s fsf sfsf sfs fs fsf sfsfsfsdaf as dfs df asdf asdfa</p>
+									<p>If we use the traditional approach, the same sensor value could mean either of two entirely separate locations</p>
 								</div>
-
-								<p>p2</p>
 								<h2>Enter, Machine Learning</h2>
-								<p>yada yada</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For our final project, we determined we could use machine learning to solve these two problems.  If we could combine information from both the left <b>and</b> right IR sensors in a meaningful way, we could definitively locate ourselves within the world.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We started by creating a training set of points mapping left and right sensor values to real world position in the maze cell.  The training points were perpendicular only (no angle offset).</p>
+								<span><img src="../images/mlai/localization/xyz_drawing.png" class="center pic" alt="" /></span>
+								<br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In the below visualizations, X and Y are input (IR sensors) and Z is output (Position in cm).  The resulting spline is essentially a mashup of two of the exponential curves we saw earlier, plus the dropoffs.</p>
+								<br>
 
 								<span class="center" style="max-width: 60%">
 									<img src="../images/mlai/localization/regression_right.png" style="max-width: 49%" alt="" />
 									<img src="../images/mlai/localization/regression_front.png" style="max-width: 49%" alt="" />
 								</span>
-								<div class="center caption">
-									<p>caption asdf asdfasdf asdfsdf sdfdfsdf sfsfs fs sfs fs fsfs fsf sf s fsf s fsf sfsf sfs fs fsf sfsfsfsdaf as dfs df asdf asdfa</p>
+								<div class="center">
+									<p>Two views of the same curve</p>
 								</div>
+								<br>
 
-								<p>yada yada</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Our robot then used a locally weighted regression with a carefully chosen weight function to predict the real world position given new input data.  Simply put, training points closest to the new input in the XY plane would contribute most to the predicted value.  It is somewhat like a K nearest neighbor, except the nearest neighbors are weighted by how near they are.</p>
 
-								<span class="center" style="max-width: 60%">
-									<img src="../images/mlai/localization/cv_right.png" style="max-width: 49%" alt="" />
-									<img src="../images/mlai/localization/cover.png" style="max-width: 49%" alt="" />
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This solves the dropoff problem by spreading out the curve, so that every input combination has only one output on the curve, rather than two.</p>
+								<span><img src="../images/mlai/localization/2d_top.png" class="center pic" alt="" /></span>
+								<br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;What may be less obvious, however, is how this solves the much larger problem of angle offset.  Let's look at an example where the input is (1500, 1000):</p>
+								<span><img src="../images/mlai/localization/offset_drawing.png" class="center pic" alt="" /></span>
+								<br>
+
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If we had been doing a regression using only left or right, we would get one of two very different answers, both of which are way off target.</p>
+								<span><img src="../images/mlai/localization/2d_top_naive.png" class="center pic" alt="" /></span>
+								<div class="center caption">
+									<p>The example input does not lie on the training curve, because the robot is at an offset angle</p>
+								</div>
+								<br>
+								<span><img src="../images/mlai/localization/regression_right_naive.png" class="center pic" alt="" /></span>
+								<div class="center caption">
+									<p>Depending on whether left or right is used, two very different outcomes are possible</p>
+								</div>
+								<br>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;With the machine learning approach, locally weighted regression, the prediction is influenced by all nearby points, and the robot correctly determines its location:</p>
+								<span><img src="../images/mlai/localization/regression_right_lwr.png" class="center pic" alt="" /></span>
+								<br>
+								<h2>Video</h2>
+
+								<!-- <span class="center" style="width: 60%">
+									<img src="../images/mlai/localization/cv_right.png" style="width: 49%" alt="" />
+									<img src="../images/mlai/localization/cover.png" style="width: 49%" alt="" />
 								</span>
 								<div class="center caption">
 									<p>caption asdf asdfasdf asdfsdf sdfdfsdf sfsfs fs sfs fs fsfs fsf sf s fsf s fsf sfsf sfs fs fsf sfsfsfsdaf as dfs df asdf asdfa</p>
-								</div>
+								</div> -->
 							</section>
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<!-- Footer -->
+						<footer id="footer">
+							<!-- <section>
+								<h2>Aliquam sed mauris</h2>
+								<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+								<ul class="actions">
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</section> -->
+							<section>
+								<h2>Sebastian Dobon</h2>
+								<dl class="alt">
+									<dt>Address</dt>
+									<dd>721 University Place &bull; Evanston, IL 60201 &bull; USA</dd>
+									<dt>Phone</dt>
+									<dd>(224) 659-0001</dd>
+									<dt>Email</dt>
+									<dd><a href="#">sebastiandobon2019@u.northwestern.edu</a></dd>
+								</dl>
+								<!-- <ul class="icons">
+									<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								</ul> -->
+							</section>
+							<p class="copyright">&copy; Sebastian Dobon. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</footer>
 
 			</div>
 

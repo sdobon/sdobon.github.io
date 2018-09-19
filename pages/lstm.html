@@ -30,7 +30,7 @@
 							<section id="content" class="main">
 
 								<h2>Background</h2>
-								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This project aims to explore trends in popular music over time.  By generating text to mimic hit songs from different decades, we can look at the output to compare the dominant themes of the times, and hopefully learn something about what life was like at those times, at least in terms of popular culture mindset.  In some sense, the output is a summary or compilation of all of the input data.</p>
+								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This project aims to explore trends in popular music over time.  By generating text to mimic hit songs from different decades, we can look at the output to compare the dominant themes of the times, and hopefully learn something about what life was like at those times, at least in terms of popular culture mindset.  This is because, in some sense, the output is a summary or compilation of all of the input data.</p>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We made use of Long-Short Term Memory Neural Networks, a popular type of Recurrent Neural Network used to predict/generate sequences of things. In this particular project, a seed sequence of 40 characters was used to predict the 41st character.  Then, we slide the window and use characters 2-41 to predict the 42nd, and repeat 400 times until we have a paragraph of generated text.  For training data, we created a corpus of text for each decade containing the lyrics of the top 100 songs for every year of that decade.
 								</p>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Part of what makes this project cool is that it is almost impossible to empirically measure success.  There is no way to say "the grammar is X% perfect," or, "the topics are Y% accurate to the decade," so it becomes more of an art and a creative process to find out how to determine success and optimize the model.  As part of validation, we found the following study which did a rigorous statistical analysis of hit songs, and I have to say our generated texts and the insights we extracted are spot on with the study's findings (and probably took a fraction of the time).
@@ -52,7 +52,7 @@
 										close to mine and i knew our joy would feeded my love still begin my love i got a show for the boat you are and i can take you i love you are my new rill in the mornin only when you know i love you baby i want to knows in love you say when you know its all right before the means wont you really my eyes dont stop it do it made away i have seen only the band aleaist we say shes gonna be long do you about the real real the morning baby don
 									</p>
 								</div>
-								<p>Romantic relationships the primary topic, language not very sexual in nature.</p>
+								<p>Here, romantic relationships are the primary topic, and the language is not very sexual in nature.</p>
 
 
 								<h2>1990-1999</h2>
@@ -74,7 +74,7 @@
 										break me yeah you wreck mei put you high i said i want it i know i love you this is the way i see it who wont you can be a little shit what i want it i see it i can see it when i was are the same i want the bast when you should see it when you can see it i want it i can show you the stars im a good and i love it on the stars i got the club the bed the same i want the match the party thinkin when i should want the star i shake it off i s</p>
 
 									</div>
-									<p>Still romantic content: juxtaposed use of "I" and "you."  Starting to get more sexual and party-themed: use of words like "bed," "club," "party."</p>
+									<p>There is still romantic content: juxtaposed use of "I" and "you."  The content is starting to get more sexual and party-themed: use of words like "bed," "club," "party."</p>
 
 									<h2>2006-2015</h2>
 									<div class="center caption">
@@ -87,7 +87,7 @@
 
 										</p>
 									</div>
-									<p>Lots of focus on "club" and "party."  This decade I show two sections of generated text with different "diversity," which is basically a randomness factor.  Diveresity too low (first example, 0.2) results in less interesting, repetitive output. Too high results in gibberish, as you'll see next.</p>
+									<p>Here, we see lots of focus on "club" and "party."  This decade I show two sections of generated text with different "diversity," which is basically a randomness factor.  Diveresity too low (first example, 0.2) results in less interesting, repetitive output. Too high results in gibberish, as you'll see next.</p>
 
 									<h2>Diversity Parameter Too High</h2>
 
@@ -115,35 +115,35 @@
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Etiam feugiat</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
-								<dt>Phone</dt>
-								<dd>(000) 000-0000 x 0000</dd>
-								<dt>Email</dt>
-								<dd><a href="#">information@untitled.tld</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<!-- Footer -->
+						<footer id="footer">
+							<!-- <section>
+								<h2>Aliquam sed mauris</h2>
+								<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+								<ul class="actions">
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</section> -->
+							<section>
+								<h2>Sebastian Dobon</h2>
+								<dl class="alt">
+									<dt>Address</dt>
+									<dd>721 University Place &bull; Evanston, IL 60201 &bull; USA</dd>
+									<dt>Phone</dt>
+									<dd>(224) 659-0001</dd>
+									<dt>Email</dt>
+									<dd><a href="#">sebastiandobon2019@u.northwestern.edu</a></dd>
+								</dl>
+								<!-- <ul class="icons">
+									<li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+								</ul> -->
+							</section>
+							<p class="copyright">&copy; Sebastian Dobon. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+						</footer>
 
 			</div>
 
