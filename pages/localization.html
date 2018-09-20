@@ -34,10 +34,10 @@
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In my AI robotics lab, we used a maze on a uniformly sized grid.  For the robot to locate itself on a grid cell, the simple approach is for the robot to use one distance sensor (Infrared) on its side and map the sensor value to a real world distance using a 2D regression:</p>
 								<span><img src="../images/mlai/localization/exp_regression.png" class="center caption" alt="" /></span>
 								<br><br>
-								<span><img src="../images/mlai/localization/drawing_1.png" class="center pic" alt="" /></span>
+								<span><img src="../images/mlai/localization/drawing_1.PNG" class="center pic" alt="" /></span>
 								<br>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This works in theory, but in practice we realized that if the robot ended up turned at an angle, the robot thought it was farther than it actually was, and would soon crash into a wall as a result of this false information:</p>
-								<span><img src="../images/mlai/localization/drawing_angle.png" class="center pic" alt="" /></span>
+								<span><img src="../images/mlai/localization/drawing_angle.PNG" class="center pic" alt="" /></span>
 								<div class="center caption">
 									<p>Here, the robot thinks it is 4cm to the right of where it actually is, and will tend to crash into the left wall instead of turning right to stay in the center</p>
 								</div>
@@ -49,7 +49,7 @@
 								<h2>Enter, Machine Learning</h2>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For our final project, we determined we could use machine learning to solve these two problems.  If we could combine information from both the left <b>and</b> right IR sensors in a meaningful way, we could definitively locate ourselves within the world.</p>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;We started by creating a training set of points mapping left and right sensor values to real world position in the maze cell.  The training points were perpendicular only (no angle offset).</p>
-								<span><img src="../images/mlai/localization/xyz_drawing.png" class="center pic" alt="" /></span>
+								<span><img src="../images/mlai/localization/xyz_drawing.PNG" class="center pic" alt="" /></span>
 								<br>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In the below visualizations, X and Y are input (IR sensors) and Z is output (Position in cm).  The resulting spline is essentially a mashup of two of the exponential curves we saw earlier, plus the dropoffs.</p>
 								<br>
@@ -69,7 +69,7 @@
 								<span><img src="../images/mlai/localization/2d_top.png" class="center pic" alt="" /></span>
 								<br>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;What may be less obvious, however, is how this solves the much larger problem of angle offset.  Let's look at an example where the input is (1500, 1000):</p>
-								<span><img src="../images/mlai/localization/offset_drawing.png" class="center pic" alt="" /></span>
+								<span><img src="../images/mlai/localization/offset_drawing.PNG" class="center pic" alt="" /></span>
 								<br>
 
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;If we had been doing a regression using only left or right, we would get one of two very different answers, both of which are way off target.</p>

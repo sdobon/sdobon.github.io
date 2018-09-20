@@ -35,7 +35,7 @@
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Personally, the course I took on agent-based modeling was an excellent excercise in thinking about phenomena from both a birds-eye view and the perspective of individuals, and being able to trace a link between the two.  I gained an intuition for observing emergent phenomena in the world around me, and uncovering how that phenomena emerged as a result of the actions of indivuals, something that has already began serving me in my personal and professional life.</p>
 								<h2>The Model</h2>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For my term project in this course, I built a model that tests one hypothesis on why certain fish exhibit schooling behavior. The “Many Eyes Hypothesis”: Schooling fish work together to identify and avoid predators, enlarging their effective field of vision. Almost all fish have a field of vision like this:</p>
-								<span><img src="../images/pp/schooling/fish_vision.png" class="center pic" alt="" /></span>
+								<span><img src="../images/pp/schooling/fish_vision.PNG" class="center pic" alt="" /></span>
 								<br><br>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Swimming together as a school, in theory, allows fish to have their blindspot covered because it is unlikely that an entire group of fish all have their backs to a predator.  Wikipedia states that it is unproven whether or not this hypothesis is true.  My agent-based model sets out to test this hypothesis, isolating the predator-prey hunt from already proven variables such as sensory confusion and cognitive overload.</p>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;To exhibit schooling behavior, the fish follow three basic rules:</p>
@@ -52,17 +52,17 @@
 								</div>
 								<h2>Qualitative Results</h2>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In the screenshot below, the red prey fish can "see" the predator (white), and the blue prey fish cannot.  "Seeing" is based on field of vision and distance, and the red fish actively avoid the predator.  Because of schooling behavior, the blue fish that cannot yet see the predator follow their schoolmates' lead and adjust course to avoid the predator.</p>
-								<span><img src="../images/pp/schooling/fleeing.png" class="center pic" alt="" /></span>
+								<span><img src="../images/pp/schooling/fleeing.PNG" class="center pic" alt="" /></span>
 								<br>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Predators wander randomly until they find a prey, and will turn black if they catch a fish.  The below video shows the model running at full speed and then in slow motion.</p>
-								<iframe width="560" height="315"  class="center" src="https://www.youtube.com/embed/B2kQF7eWkIs?rel=0&amp;start=75" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								<!-- <iframe width="560" height="315"  class="center" src="https://www.youtube.com/embed/B2kQF7eWkIs?rel=0&amp;start=75" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 								<br>
 								<iframe width="560" height="315"  class="center" src="https://www.youtube.com/embed/V1KeZI9ypE4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 								<br>
 								<br>
 								<h2>Quantitative Results</h2>
 								<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The next step was to quantify whether schooling actually helped the fish survive or not.  I set up an experiment to test different values of "align coefficient" and "cohere coefficient," with (0,0) being no schooling, the fish only flee predators individually and separate to avoid bumping into each other.  At each configuration, I ran the model 10 times for 1000 time steps each and averaged the surviving number of prey fish.  10 runs at each point was enough to show a clear trend, with schooling increasing survivorship by 50% as you'll see below.  More runs would have made smoother trend, but I did not have enough compute available.</p>
-								<span><img src="../images/pp/schooling/tableau.png" class="center caption" alt="" /></span>
+								<span><img src="../images/pp/schooling/tableau.PNG" class="center caption" alt="" /></span>
 							</section>
 
 					</div>
